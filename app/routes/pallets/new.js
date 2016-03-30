@@ -1,8 +1,8 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
+  currentSession: Ember.inject.service(),
   model: function() {
-    var applicationController = this.controllerFor('application')
-    return this.store.createRecord('pallet', { user: applicationController.get('currentUser')});
+    return this.store.createRecord('pallet', { user: this.get('currentSession.user')});
   }
 });

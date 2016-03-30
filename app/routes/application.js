@@ -1,12 +1,11 @@
 import Ember from 'ember';
+import ApplicationRouteMixin from 'ember-simple-auth/mixins/application-route-mixin';
 
-export default Ember.Route.extend({
-  setupController: function(controller, model) {
-    var user_id = this.controllerFor('application').get('session').get('data').authenticated.id;
-    var _this = this;
+export default Ember.Route.extend(ApplicationRouteMixin, {
+  session: Ember.inject.service(),
+  currentSession: Ember.inject.service(),
 
-    this.store.findRecord('user', user_id).then(function(_user) {
-      _this.controllerFor('application').set('currentUser', _user);
-    });
+  beforeModel: function() {
+    return this.get('currentSession').loadCurrentUser();
   }
 });
