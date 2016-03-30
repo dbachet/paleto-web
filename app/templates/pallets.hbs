@@ -1,0 +1,23 @@
+<h4>Pallets</h4>
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Latitude</th>
+    <th>Longitude</th>
+    <th>Actions</th>
+  </tr>
+  {{#each model as |pallet|}}
+  <tr>
+    <td>{{pallet.title}}</td>
+    <td>{{pallet.description}}</td>
+    <td>{{pallet.latitude}}</td>
+    <td>{{pallet.longitude}}</td>
+    <td>Edit - Delete</td>
+  </tr>
+  {{/each}}
+</table>
+
+{{#link-to 'pallets.new' }}New{{/link-to}}
+
+{{outlet}}

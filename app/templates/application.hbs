@@ -1,0 +1,11 @@
+<h2 id="title">Welcome to Paleto</h2>
+{{#link-to 'index'}}Home{{/link-to}}
+{{#link-to 'pallets'}}Pallets{{/link-to}}
+
+{{#if session.isAuthenticated}}
+  <a id="logout" {{ action 'invalidateSession' }}>Logout</a>
+{{else}}
+  {{#link-to 'login'}}Login{{/link-to}}
+{{/if}}
+
+{{outlet}}
