@@ -10,6 +10,9 @@ Router.map(function() {
   this.route('pallets', function() {
     this.route('new');
   });
+  this.route('pallet', { path:'pallets/:pallet_id' }, function() {
+    this.route('edit');
+  });
 });
 
 export default Router;

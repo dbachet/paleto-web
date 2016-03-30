@@ -1,0 +1,14 @@
+<h4>Update pallet of {{model.user.email}}</h4>
+
+<form {{action 'update' on='submit'}}>
+  Title: {{input type='text' value=model.title}}
+  <br>
+  Description: {{input type='text' value=model.description}}
+  <br>
+  Latitude: {{input type='text' value=model.latitude}}
+  <br>
+  Longitude: {{input type='text' value=model.longitude}}
+  <br>
+  <button type='submit'>Save</button>
+</form>
+
