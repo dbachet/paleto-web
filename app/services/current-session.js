@@ -12,5 +12,6 @@ export default Ember.Service.extend({
         _this.set('user', user);
       });
     }
-  }
+  },
+  isLoggedIn: Ember.computed.notEmpty('user')
 });

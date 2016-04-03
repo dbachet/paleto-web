@@ -1,0 +1,9 @@
+<td>{{pallet.title}}</td>
+<td>{{pallet.description}}</td>
+<td>{{pallet.latitude}}</td>
+<td>{{pallet.longitude}}</td>
+{{#if canEditAndDelete}}
+  <td>{{#link-to 'pallet.edit' pallet}}Edit{{/link-to}} - Delete</td>
+{{else}}
+  <td></td>
+{{/if}}

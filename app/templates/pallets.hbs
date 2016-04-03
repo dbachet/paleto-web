@@ -7,14 +7,8 @@
     <th>Longitude</th>
     <th>Actions</th>
   </tr>
-  {{#each model as |pallet|}}
-  <tr>
-    <td>{{pallet.title}}</td>
-    <td>{{pallet.description}}</td>
-    <td>{{pallet.latitude}}</td>
-    <td>{{pallet.longitude}}</td>
-    <td>Edit - Delete</td>
-  </tr>
+  {{#each filteredPallets as |pallet|}}
+    {{pallet-table-row pallet=pallet applicationController=applicationController}}
   {{/each}}
 </table>
 
