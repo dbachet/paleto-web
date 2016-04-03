@@ -13,5 +13,12 @@ export default Ember.Component.extend({
     return Ember.isEqual(this.get('currentUser.id'), this.get('pallet.user.id'));
   }.property('currentUser', 'pallet.user'),
 
-  canEditAndDelete: Ember.computed.or('isLoggedInAsAdmin', 'hasCurrentUserCreatedPallet')
+  canEditAndDelete: Ember.computed.or('isLoggedInAsAdmin', 'hasCurrentUserCreatedPallet'),
+
+  actions: {
+    delete: function(pallet) {
+      pallet.deleteRecord();
+      pallet.save();
+    }
+  }
 });
