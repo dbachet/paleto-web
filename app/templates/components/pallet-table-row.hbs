@@ -3,7 +3,7 @@
 <td>{{pallet.latitude}}</td>
 <td>{{pallet.longitude}}</td>
 {{#if canEditAndDelete}}
-  <td>{{#link-to 'pallet.edit' pallet}}Edit{{/link-to}} - <button {{action "delete" pallet}}>Delete</button></td>
+  <td>{{#link-to 'pallet' pallet}}Show{{/link-to}} - {{#link-to 'pallet.edit' pallet}}Edit{{/link-to}} - <button {{action "delete" pallet}}>Delete</button></td>
 {{else}}
-  <td></td>
+  <td>{{#link-to 'pallet' pallet}}Show{{/link-to}}</td>
 {{/if}}
