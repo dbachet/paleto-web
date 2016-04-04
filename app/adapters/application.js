@@ -4,5 +4,6 @@ import DS from 'ember-data';
 
 export default DS.JSONAPIAdapter.extend(DataAdapterMixin, {
   host: ENV['api_host'],
+  namespace: 'api/v1',
   authorizer: "authorizer:devise"
 });
