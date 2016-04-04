@@ -2,10 +2,13 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   currentSession: Ember.inject.service(),
+
   actions: {
     create() {
-      this.get('model').save();
-      this.transitionToRoute('pallets.index');
+      var _this = this;
+      this.get('model').save().then(function() {
+        _this.transitionToRoute('pallets.index');
+      });
     }
   }
 });

@@ -2,12 +2,32 @@
 
 <form {{action 'update' on='submit'}}>
   Title: {{input type='text' value=model.title}}
+  {{#each model.errors.title as |error|}}
+    <div class="error">
+      {{error.message}}
+    </div>
+  {{/each}}
   <br>
   Description: {{input type='text' value=model.description}}
+  {{#each model.errors.description as |error|}}
+    <div class="error">
+      {{error.message}}
+    </div>
+  {{/each}}
   <br>
   Latitude: {{input type='text' value=model.latitude}}
+  {{#each model.errors.latitude as |error|}}
+    <div class="error">
+      {{error.message}}
+    </div>
+  {{/each}}
   <br>
   Longitude: {{input type='text' value=model.longitude}}
+  {{#each model.errors.longitude as |error|}}
+    <div class="error">
+      {{error.message}}
+    </div>
+  {{/each}}
   <br>
   <button type='submit'>Save</button>
 </form>
